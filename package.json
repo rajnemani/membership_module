@@ -1,0 +1,12 @@
+{
+  "name": "froggyfrog-membership",
+  "author": "Raj Nemani",
+  "description": "A Membership system that I could not think of.....",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-watch": "*",
+    "should": "^4.4.1"
+  }
+}
