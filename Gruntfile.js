@@ -1,3 +1,4 @@
+/* This file has all the Grunt tasks including tasks to run and watch mocha tests*/
 var db = require("secondthought");
 var asset = require("assert");
 module.exports = function (grunt) {
