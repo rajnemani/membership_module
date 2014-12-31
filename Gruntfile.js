@@ -1,3 +1,5 @@
+var db = require("secondthought");
+var asset = require("assert");
 module.exports = function (grunt) {
 
     grunt.initConfig({
@@ -8,6 +10,16 @@ module.exports = function (grunt) {
             files:['lib/**/*js', 'models/**/*js'],
             tasks:['jshint']
         }
+    });
+
+    grunt.registerTask("installDb", function() {
+        var done = this.async();
+        db.connect({db:"membership"}, function(err,db) {
+            db.install(['users','logs','sessions'],function(err, tableResult){
+                assert.ok(err==null,err);
+                console.log("Db installed: " + tableResult);
+            });
+        });
     });
 
     grunt.loadNpmTasks("grunt-contrib-jshint");
